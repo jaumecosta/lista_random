@@ -125,24 +125,28 @@ $habilidades = [
     'Sass/Less',
     'Laravel',
 ];
-switch ($nombre) {
-    case "julia":
-        echo "Your favorite color is red!";
-        break;
-    case "toni":
-        echo "Your favorite color is blue!";
-        break;
-    case "jorge":
-        echo "Your favorite color is green!";
-        break;
-    default:
-        echo "ESTAS DESPEDIDO";
+
+while (!empty($nombres)) {
+    $primerRand = rand(1, count($nombres)) -1;
+    $nombretrabajador = $nombres[$primerRand];
+    unset($nombres[$primerRand]);  //impide que haya bucle infitito
+
+    $nombres = array_values($nombres);
+     
+    $segundoRand = rand(1, count($habilidades)) -1;
+    $nombreHabilidad = $habilidades[$segundoRand];
+    unset($habilidades[$habilidades]);
+    $habilidades = array_values($habilidades);
+
+    echo($nombretrabajador . '->' . $nombreHabilidad  . '<br>');
 }
-?>
-    <?php
+
+
+
 
 
 
 ?>
+ 
 </body>
 </html>
