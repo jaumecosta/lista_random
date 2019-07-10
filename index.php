@@ -35,15 +35,21 @@ while (!empty($nombres)) {
     $primerRand = rand(1, count($nombres)) -1;
     $nombretrabajador = $nombres[$primerRand];
     unset($nombres[$primerRand]);  //impide que haya bucle infitito
+    $nombres = array_values($nombres);
+/**SEGUNDO RPOUND */
+    $nombres = array_values($nombres);
+    $segundoRand = rand(1, count($nombres)) -1;
+    $nombretrabajador = $nombres[$segundoRand];
+    unset($nombres[$segundoRand]);  //impide que haya bucle infitito
 
     $nombres = array_values($nombres);
-   
 
     echo($nombretrabajador .  '<br>');
 
     
 }
 
+for()
 
 
 
